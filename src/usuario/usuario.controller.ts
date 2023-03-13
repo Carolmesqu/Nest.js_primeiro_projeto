@@ -21,18 +21,20 @@ export class UsuarioController {
    * receber eles atraves do body
    */
 
-  //Criamos um repositorio de usuario
-  private usuarioRepository = new UsuarioRepository();
+  constructor(
+    private usuarioRepository: UsuarioRepository
+    ) {}
 
   @Post()
   async criaUsuario(@Body() dadosDoUsuario) {
-   this.usuarioRepository.salvar(dadosDoUsuario);
+    
+  this.usuarioRepository.salvar(dadosDoUsuario);
     return dadosDoUsuario;
   }
 
   //Metodo para listar usuarios
   @Get()
   async listaUsuarios() {
-   return this.usuarioRepository.listar();
+  return this.usuarioRepository.listar();
   }
 }

@@ -2,9 +2,13 @@
 /**
  * Nós vamos utilizar esse repositorio pra salvar os dados que recebemos do
  * usuario controller, no momento vamos salvar os dados do usuario na
- * na memoria, em um array
+ * na memoria, em um array.
+ * Um provider no Nest.js é qualquer classe que esteja decorada com @Injectable.
  */
 
+import { Injectable } from "@nestjs/common";
+
+@Injectable()
 export class UsuarioRepository {
     private usuarios = [];
 
